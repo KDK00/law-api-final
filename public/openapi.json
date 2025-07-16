@@ -1,0 +1,26 @@
+﻿{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "법령/판례 통합 검색 API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://[배포될-Vercel-주소]"
+    }
+  ],
+  "paths": {
+    "/api/caseSearch": {
+      "get": {
+        "summary": "키워드로 판례 목록 검색",
+        "operationId": "searchCases"
+      }
+    },
+    "/api/caseBody": {
+      "get": {
+        "summary": "ID로 판례 본문 조회",
+        "operationId": "getCaseBody"
+      }
+    }
+  }
+}

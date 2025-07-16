@@ -1,0 +1,12 @@
+{
+  "headers": [
+    {
+      "source": "/openapi.json",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "https://chat.openai.com" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type" }
+      ]
+    }
+  ]
+}
