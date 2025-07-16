@@ -1,5 +1,6 @@
-import axios from 'axios';
-export default async function handler(req, res) {
+const axios = require('axios');
+
+module.exports = async (req, res) => {
   const { query } = req.query;
   const url = `http://www.law.go.kr/DRF/lawSearch.do?OC=mentor0119&target=prec&type=XML&query=${encodeURIComponent(query)}&display=10`;
   try {
@@ -9,4 +10,4 @@ export default async function handler(req, res) {
   } catch (error) {
     res.status(500).json({ error: "API 호출 실패" });
   }
-}
+};
