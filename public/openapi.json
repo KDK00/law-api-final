@@ -1,7 +1,7 @@
 ﻿{
   "openapi": "3.1.0",
   "info": {
-    "title": "법령/판례 통합 검색 API",
+    "title": "법령/판례 통합 검색 API v2",
     "version": "1.0.0"
   },
   "servers": [
@@ -10,39 +10,19 @@
     }
   ],
   "paths": {
-    "/api/lawSearch": {
+    "/api/searchAll": {
       "get": {
-        "summary": "키워드로 법령 목록 검색",
-        "operationId": "searchLaws",
+        "summary": "키워드로 법령과 판례를 한번에 통합 검색",
+        "operationId": "searchAll",
         "parameters": [
-          { "name": "query", "in": "query", "required": true, "schema": { "type": "string" } }
-        ]
-      }
-    },
-    "/api/lawBody": {
-      "get": {
-        "summary": "MST로 법령 본문 조회",
-        "operationId": "getLawBody",
-        "parameters": [
-          { "name": "mst", "in": "query", "required": true, "schema": { "type": "string" } }
-        ]
-      }
-    },
-    "/api/caseSearch": {
-      "get": {
-        "summary": "키워드로 판례 목록 검색",
-        "operationId": "searchCases",
-        "parameters": [
-          { "name": "query", "in": "query", "required": true, "schema": { "type": "string" } }
-        ]
-      }
-    },
-    "/api/caseBody": {
-      "get": {
-        "summary": "ID로 판례 본문 조회",
-        "operationId": "getCaseBody",
-        "parameters": [
-          { "name": "id", "in": "query", "required": true, "schema": { "type": "string" } }
+          {
+            "name": "query",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ]
       }
     }
