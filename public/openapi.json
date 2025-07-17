@@ -6,20 +6,44 @@
   },
   "servers": [
     {
-      "url": "https://[배포될-Vercel-주소]"
+      "url": "https://law-api-final.vercel.app"
     }
   ],
   "paths": {
+    "/api/lawSearch": {
+      "get": {
+        "summary": "키워드로 법령 목록 검색",
+        "operationId": "searchLaws",
+        "parameters": [
+          { "name": "query", "in": "query", "required": true, "schema": { "type": "string" } }
+        ]
+      }
+    },
+    "/api/lawBody": {
+      "get": {
+        "summary": "MST로 법령 본문 조회",
+        "operationId": "getLawBody",
+        "parameters": [
+          { "name": "mst", "in": "query", "required": true, "schema": { "type": "string" } }
+        ]
+      }
+    },
     "/api/caseSearch": {
       "get": {
         "summary": "키워드로 판례 목록 검색",
-        "operationId": "searchCases"
+        "operationId": "searchCases",
+        "parameters": [
+          { "name": "query", "in": "query", "required": true, "schema": { "type": "string" } }
+        ]
       }
     },
     "/api/caseBody": {
       "get": {
         "summary": "ID로 판례 본문 조회",
-        "operationId": "getCaseBody"
+        "operationId": "getCaseBody",
+        "parameters": [
+          { "name": "id", "in": "query", "required": true, "schema": { "type": "string" } }
+        ]
       }
     }
   }
